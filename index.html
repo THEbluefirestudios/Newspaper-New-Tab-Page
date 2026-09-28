@@ -1,0 +1,205 @@
+<html>
+
+<head>
+    <title>New Tab</title>
+    <style>
+        @font-face {
+            font-family: '70snewspaperfonts';
+            src: url('fonts/MayhartWindah-9M3y0.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Times New Roman", serif;
+            color: #202124;
+            font-size: 150%;
+            background-color: #fffadd;
+        }
+
+        .title {
+            font-family: '70snewspaperfonts';
+            font-size: 200%;
+        }
+
+        .currentdate {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: 10px;
+            text-align: left;
+        }
+
+        .search {
+            text-align: center;
+        }
+
+        .search input {
+            opacity: 0.6;
+            width: 40%;
+            padding: 6px 10px;
+        }
+
+        p {
+            font-size: medium;
+            margin: 0;
+        }
+
+        .articlecontainer {
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .articleheadline {
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .articlesubhead {
+            margin: 0 0 16px 0;
+            font-style: italic;
+            font-weight: normal;
+            color: #3c4043;
+            border-bottom: 1px solid #202124;
+            padding-bottom: 8px;
+        }
+
+        .newspapergrid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .newscolumn {
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1.45;
+        }
+
+        .newscolumn p {
+            margin-bottom: 12px;
+            text-indent: 1em;
+        }
+
+        .newscolumn p:first-of-type {
+            text-indent: 0;
+        }
+
+        .newsimageslot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .imageplaceholder {
+            width: 100%;
+            height: 240px;
+            background-color: #ede7c8;
+            border: 1px solid #202124;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            font-size: 14px;
+            color: #5f6368;
+            box-sizing: border-box;
+        }
+
+        .imageplaceholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .newsimagecaption {
+            font-size: 12px;
+            font-style: italic;
+            margin-top: 6px;
+            color: #333;
+            width: 100%;
+        }
+
+        .links {
+            font-size: small;
+            word-spacing: 20px;
+        }
+
+        .links a {
+            color: #202124;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="currentdate" class="currentdate"></div>
+        <div class="title" align="center">The Internet Times</div>
+        <script>
+            const now = new Date();
+            document.getElementById('currentdate').innerHTML = `${now.toLocaleDateString('en-US', { weekday: 'short' })}<br>${now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}`;
+        </script>
+    </header>
+    <hr>
+
+    <div class="search">
+        <input type="text" id="searchinput" placeholder="Search..."
+            onkeydown="if(event.key === 'Enter') window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(this.value)">
+        <div class="links">
+            <a href="https://www.youtube.com/">YouTube</a>
+            <a href="https://github.com/">GitHub</a>
+            <a href="https://www.netflix.com">Netflix</a>
+            <a href="https://www.amazon.com">Amazon</a>
+            <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>
+        </div>
+    </div>
+    <hr>
+
+    <article class="articlecontainer">
+        <h2 class="articleheadline">NATIONS MEET AS TALKS BEGIN ON WORLD ENERGY CRISIS</h2>
+        <h4 class="articlesubhead">Delegates Arrive for Emergency Conference; Oil Supplies Remain a Major Concern</h4>
+
+        <div class="newspapergrid">
+            <div class="newscolumn">
+                <p><b>GENEVA, Monday</b> - Representatives from more than thirty nations arrived here yesterday for an
+                    emergency conference aimed at finding ways to deal with the growing international energy crisis.</p>
+                <p>The meeting, called after several months of uncertainty over oil supplies, opened with a brief
+                    address from the conference chairman, who urged the participating countries to avoid "panic and
+                    unnecessary competition."</p>
+                <p>Queues at petrol stations have become an increasingly common sight in parts of Europe and North
+                    America. Several governments have introduced restrictions on fuel consumption, while motorists in
+                    some cities have been asked to leave their cars at home on designated days.</p>
+                <p>The effects have also been felt far beyond the roads. Rising fuel costs have pushed up the price of
+                    transportation, heating and several everyday goods.</p>
+            </div>
+
+            <div class="newsimageslot">
+                <div class="imageplaceholder">
+                    <img src="download.jpeg" alt="photo of emergency delegate summit">
+                </div>
+                <div class="newsimagecaption">
+                    Delegates gathering at the Palais des Nations earlier this morning as opening remarks got underway.
+                </div>
+            </div>
+
+            <div class="newscolumn">
+                <p>Western officials have called for greater cooperation between oil-producing and oil-consuming
+                    nations. Representatives from producing countries, meanwhile, have stressed that their natural
+                    resources must be treated as a matter of national interest.</p>
+                <p>The talks are expected to continue throughout the week.</p>
+                <p>Outside the conference hall, there was little indication that an immediate agreement was near.
+                    Delegates arriving Monday morning offered few comments to reporters, with one European
+                    representative simply remarking, "There is much to discuss."</p>
+                <p>Markets around the world are watching the negotiations closely.</p>
+                <p>For ordinary families, however, the question is considerably simpler: how much longer will the petrol
+                    last?</p>
+                <p><i>- International Desk</i></p>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>
